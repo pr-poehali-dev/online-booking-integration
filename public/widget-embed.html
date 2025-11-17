@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-запись - Встраиваемый виджет</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin-top: 40px;
+        }
+        .info-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0EA5E9;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #0EA5E9;
+        }
+        .widget-frame {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Виджет онлайн-записи</h1>
+        <p class="description">
+            Встройте форму записи в свой сайт за несколько минут
+        </p>
+
+        <div class="info-box">
+            <h3>🚀 Как встроить виджет на свой сайт</h3>
+            <p>Скопируйте этот код и вставьте его на нужную страницу вашего сайта:</p>
+        </div>
+
+        <div class="code-block">
+            <code>&lt;!-- Виджет онлайн-записи --&gt;<br>
+&lt;iframe<br>
+&nbsp;&nbsp;src="<span id="widget-url">https://ваш-домен.poehali.dev/widget</span>"<br>
+&nbsp;&nbsp;width="100%"<br>
+&nbsp;&nbsp;height="800"<br>
+&nbsp;&nbsp;frameborder="0"<br>
+&nbsp;&nbsp;style="border: none; border-radius: 8px;"<br>
+&nbsp;&nbsp;allow="clipboard-write"<br>
+&gt;&lt;/iframe&gt;</code>
+        </div>
+
+        <div class="info-box">
+            <h3>⚙️ Параметры настройки</h3>
+            <ul>
+                <li><strong>width</strong> - ширина виджета (рекомендуется 100% для адаптивности)</li>
+                <li><strong>height</strong> - высота виджета (минимум 700px для корректного отображения)</li>
+                <li><strong>border-radius</strong> - скругление углов (опционально)</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ Возможности виджета</h3>
+            <ul>
+                <li>✅ Полностью адаптивный дизайн (работает на всех устройствах)</li>
+                <li>✅ Валидация форм в реальном времени</li>
+                <li>✅ Автоматическая синхронизация с базой данных</li>
+                <li>✅ Уведомления о статусе записи</li>
+                <li>✅ Поддержка всех современных браузеров</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>Демонстрация виджета</h2>
+            <p class="description">Так виджет будет выглядеть на вашем сайте:</p>
+            
+            <div class="widget-frame">
+                <iframe 
+                    id="demo-iframe"
+                    src="/widget" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0"
+                    style="border: none;"
+                    allow="clipboard-write"
+                ></iframe>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 40px;">
+            <h3>💡 Нужна помощь?</h3>
+            <p>
+                Если у вас возникли вопросы по интеграции виджета на ваш сайт, 
+                свяжитесь с нашей службой поддержки.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const currentUrl = window.location.origin;
+        const widgetUrlElement = document.getElementById('widget-url');
+        const demoIframe = document.getElementById('demo-iframe');
+        
+        if (widgetUrlElement) {
+            widgetUrlElement.textContent = currentUrl + '/widget';
+        }
+        
+        if (demoIframe) {
+            demoIframe.src = currentUrl + '/widget';
+        }
+    </script>
+</body>
+</html>

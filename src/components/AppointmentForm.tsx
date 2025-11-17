@@ -101,7 +101,10 @@ export default function AppointmentForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           serviceId: appointmentData.service?.id,
+          serviceName: appointmentData.service?.name,
+          servicePrice: appointmentData.service?.price,
           doctorId: appointmentData.doctor?.id,
+          doctorName: appointmentData.doctor?.name,
           date: appointmentData.date,
           time: appointmentData.time,
           patientName: appointmentData.patientName,
