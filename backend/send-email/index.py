@@ -22,8 +22,12 @@ def send_email(to_email: str, subject: str, html_body: str) -> bool:
     html_part = MIMEText(html_body, 'html')
     msg.attach(html_part)
     
-    server = smtplib.SMTP(smtp_host, smtp_port, timeout=10)
-    server.starttls()
+    if smtp_port == 465:
+        server = smtplib.SMTP_SSL(smtp_host, smtp_port, timeout=15)
+    else:
+        server = smtplib.SMTP(smtp_host, smtp_port, timeout=15)
+        server.starttls()
+    
     server.login(smtp_user, smtp_password)
     server.send_message(msg)
     server.quit()
